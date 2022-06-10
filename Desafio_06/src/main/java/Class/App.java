@@ -69,14 +69,12 @@ public class App
             stmt = conn.createStatement();
 
             String sql = "INSERT INTO students " +
-                    "VALUES ( 'Eliel', '30', 10)";
+                    "VALUES ('" + Name + "', " + Age + "," + Grade + ")";
             stmt.executeUpdate(sql);
 
             System.out.println("Inserted records into the table. Please verify...");
-        } catch(SQLException se) {
+        } catch(Exception se) {
             se.printStackTrace();
-        } catch(Exception e) {
-            e.printStackTrace();
         } finally {
             try {
                 if(stmt!=null)
